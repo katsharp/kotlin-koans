@@ -17,7 +17,8 @@ class _33_Lazy_Property {
         var initialized = 0
         val lazyProperty = LazyProperty( { initialized++; 42 })
         lazyProperty.lazy
-        lazyProperty.lazy
+        val result: Int = lazyProperty.lazy
+        assertEquals(42, result)
         assertEquals("Lazy property should be initialized once", 1, initialized)
 
     }
